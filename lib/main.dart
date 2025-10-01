@@ -4,11 +4,8 @@ import 'package:my_randevu/core/routes/app_router.dart';
 import 'package:my_randevu/core/routes/app_routes.dart';
 import 'package:my_randevu/core/theme/app_theme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 

@@ -12,6 +12,8 @@ class AppTheme {
       secondary: AppColors.secondary(context),
       surface: AppColors.surface(context),
       error: AppColors.notificationColor(context),
+      onPrimary: AppColors.textColor(context),
+      onSecondary: AppColors.textColor(context),
     ),
     scaffoldBackgroundColor: AppColors.surface(context),
     textTheme: TextTheme(
@@ -19,9 +21,15 @@ class AppTheme {
       titleMedium: AppTextStyle.bodyLarge(context),
       bodyMedium: AppTextStyle.bodyMedium(context),
     ),
+    typography: Typography.material2018(),
+    textSelectionTheme: TextSelectionThemeData(
+      cursorColor: AppColors.primary(context),
+      selectionColor: AppColors.primary(context).withOpacity(0.5),
+      selectionHandleColor: AppColors.primary(context),
+    ),
     appBarTheme: AppBarTheme(
       backgroundColor: AppColors.surface(context),
-      foregroundColor: AppColors.textColor(context),
+      foregroundColor: AppColors.surface(context),
       elevation: 0,
     ),
   );

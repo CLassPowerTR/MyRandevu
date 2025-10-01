@@ -1,0 +1,13 @@
+{
+  "appName": "MyRandevu",
+  "customerLogin" = "Customer Login",
+  "businessLogin" = "Business Login",
+  "takeAppointment" = "Take Appointment",
+  "deleteAppointment" = "Delete Appointment",
+  "phoneNumber" = "Phone Number",
+  "name" = "Name",
+  "password" = "Password",
+  "home" = "Home",
+  "navBarProfile" = "Profile",
+}
+

@@ -29,7 +29,6 @@ class __SplashViewBodyState extends State<_SplashViewBody> {
       _hasConnection = connection;
       _envLoaded = envOk;
     });
-
     // Eğer her iki kontrol de başarılıysa local storage'dan first open seçeneğini oku
     if (connection && envOk) {
       String? option;

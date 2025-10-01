@@ -1,0 +1,13 @@
+{
+  "appName": "MyRandevu",
+  "customerLogin" = "Müşteri Girişi",
+  "businessLogin" = "İşletme Girişi",
+  "takeAppointment" = "Randevu Al",
+  "deleteAppointment" = "Randevu İptal",
+  "phoneNumber" = "Telefon Numarası",
+  "name" = "İsim",
+  "password" = "Şifre",
+  "home" = "Keşfet",
+  "navBarProfile" = "Profil",
+
+}
