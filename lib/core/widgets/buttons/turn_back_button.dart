@@ -7,7 +7,17 @@ TextButton TurnBackTextIconButton(BuildContext context) {
     onPressed: () {
       Navigator.pop(context);
     },
-    icon: Icon(Icons.arrow_back, color: AppColors.textColor(context)),
-    label: Text('Geri Dön', style: AppTextStyle.bodyMedium(context)),
+    icon: Icon(
+      Icons.arrow_back,
+      color: AppColors.primary(context),
+      size: AppTextStyle.bodyLarge(context).fontSize,
+    ),
+    label: Text(
+      'Geri Dön',
+      style: AppTextStyle.bodyMediumMuted(
+        context,
+        color: AppColors.primary(context),
+      ),
+    ),
   );
 }

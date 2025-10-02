@@ -10,6 +10,7 @@ class AppColors {
   static Color surface(BuildContext context) => Color(0xFFffffff);
   static Color notificationColor(BuildContext context) => Color(0xFFff4c51);
   static Color shadow(BuildContext context) => Color(0xFFcbae58);
+  static Color outline(BuildContext context) => Colors.grey;
   static Color cardColor(BuildContext context) => Colors.grey[100]!;
   static Color succesful(BuildContext context) => Colors.green;
   static Color orange(BuildContext context) => Colors.orange;
