@@ -12,6 +12,16 @@ class __AppointmentDeleteBodyViewState
     extends State<_AppointmentDeleteBodyView> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: GeneralUseAppBar(title: AppStrings.deleteAppointment),
+      body: SafeArea(
+        child: Center(
+          child: Text(
+            'Randevu İptal Ekranı',
+            style: AppTextStyle.header(context),
+          ),
+        ),
+      ),
+    );
   }
 }

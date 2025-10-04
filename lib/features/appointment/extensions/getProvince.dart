@@ -7,21 +7,16 @@ part of '../appointment_screen.dart';
 /// - [onChanged]: seçim değiştiğinde çağrılır
 Widget _provinceDropdownFromFuture({
   required BuildContext context,
-  required Future<List<Il>> provincesFuture,
   Il? initialValue,
   ValueChanged<Il?>? onChanged,
   String? emptyMessage,
 }) {
   return FutureBuilder<List<Il>>(
-    future: provincesFuture,
+    future: ApiService.getIller(),
     builder: (ctx, snapshot) {
       if (snapshot.connectionState == ConnectionState.waiting) {
-        return const SizedBox(
-          height: 48,
-          child: Center(child: CircularProgressIndicator()),
-        );
+        return dropdownShimmer(context);
       }
-
       if (snapshot.hasError) {
         final String message = snapshot.error?.toString() ?? 'Veri yüklenemedi';
         return Row(
@@ -43,7 +38,7 @@ Widget _provinceDropdownFromFuture({
         );
       }
 
-      final data = snapshot.data ?? [];
+      final List<Il> data = snapshot.data ?? <Il>[];
       if (data.isEmpty) {
         return Row(
           children: [
@@ -62,7 +57,6 @@ Widget _provinceDropdownFromFuture({
       }
 
       Il? selected = initialValue ?? data.first;
-
       return StatefulBuilder(
         builder: (ctx, setState) {
           return _choseProvicesDropdown(context, selected, data, (v) {

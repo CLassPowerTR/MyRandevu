@@ -10,21 +10,28 @@ class _AppointmentTakeBodyView extends StatefulWidget {
 
 class __AppointmentTakeBodyViewState extends State<_AppointmentTakeBodyView> {
   // Future olarak saklayıp UI'ya doğrudan ileteceğiz
-  late Future<List<Il>> _provincesFuture;
-
-  @override
-  void initState() {
-    super.initState();
-    _provincesFuture = ApiService.getProvinces();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: GeneralUseAppBar(title: AppStrings.takeAppointment),
+      appBar: AppointmentAppbar(title: AppStrings.appName),
       body: SafeArea(
         // _appointmentSearchLocationCard daha önce Future<List<Il>> kabul edecek şekilde güncellenmişti
-        child: _appointmentSearchLocationCard(context, _provincesFuture),
+        child: _appointmentSearchLocationCard(context, () {
+          setState(() {
+            // setState içinde sadece UI'yı güncellemek için boş bırakıyoruz
+            // Asıl veri yükleme işlemi _AppointmentSearchLocationCard içinde yapılacak
+            // Bu yüzden burada herhangi bir veri yükleme işlemi yapmıyoruz
+            // Sadece UI'yı yeniden çiziyoruz
+            // Eğer farklı bir işlem yapılacaksa, o işlem burada tanımlanabilir
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const _AppointmentDeleteBodyView(),
+              ),
+            );
+          });
+        }),
       ),
     );
   }

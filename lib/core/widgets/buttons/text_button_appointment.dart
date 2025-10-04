@@ -11,8 +11,11 @@ SizedBox textButtonAppointment(
   VoidCallback onPressed, {
   Color? textColor,
   Color? backgroundColor,
+  Color? shadowColor,
+  double? elevation,
   double? fontSize,
   double? width,
+  TextStyle? textStyle,
   EdgeInsetsGeometry? padding,
   BorderRadiusGeometry? borderRadius,
 }) {
@@ -23,17 +26,21 @@ SizedBox textButtonAppointment(
       style: TextButton.styleFrom(
         backgroundColor: backgroundColor ?? AppColors.textColor(context),
         padding: padding ?? AppPaddings.h10v10,
-
+        elevation: elevation ?? 0,
+        shadowColor:
+            shadowColor ?? backgroundColor ?? AppColors.textColor(context),
         shape: RoundedRectangleBorder(
           borderRadius: borderRadius ?? AppRadius.r8,
         ),
       ),
       child: Text(
         text,
-        style: AppTextStyle.bodyLargeBold(
-          context,
-          color: textColor ?? AppColors.surface(context),
-        ),
+        style:
+            textStyle ??
+            AppTextStyle.bodyLargeBold(
+              context,
+              color: textColor ?? AppColors.surface(context),
+            ),
       ),
     ),
   );
